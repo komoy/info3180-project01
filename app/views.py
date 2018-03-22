@@ -50,11 +50,13 @@ def profile():
         
             flash("Profile Added", "success")
             return redirect(url_for("profiles"))
-        except Exception as e:
+        except :
             db.session.rollback()
             flash("Internal Error", "danger")
             return render_template("profile.html", form =form)
-        
+    
+    return render_template("profile.html", form =form)
+    
 @app.route("/profiles")
 def profiles():
     users = UserProfile.query.all()

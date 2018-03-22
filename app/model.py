@@ -2,6 +2,7 @@ from . import db
 from datetime import datetime
 
 class UserProfile(db.Model):
+    
     userid = db.Column(db.Integer, primary_key=True)
     
     first_name = db.Column(db.String(80), nullable=False)
@@ -14,7 +15,7 @@ class UserProfile(db.Model):
     
     location=db.Column(db.String(255), nullable=False)
     
-    biography=db.Column(db.Text(300), nullable=False)
+    biography=db.Column(db.String(200), nullable=False)
     
     photo=db.Column(db.String(80))
     
