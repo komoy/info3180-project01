@@ -1,34 +1,47 @@
 {% extends 'base.html' %}
 
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" type="text/css" />
+
+{% endblock %}
 {% block main %}
-    <h2>Add Profile</h2>
+{% include "flash_messages.html" %}
+
+ <div class="container">  <h2 id="title">Add Profile</h2>
+ </div>
+  
+    <div class="form-container border-style">
     
     <form method = "POST"  enctype = "multipart/form-data" action="{{ url_for('profile') }}">
         {{ form.csrf_token }}
-        <div class="form-group">
-            {{ form.Firstname.label }} {{ form.Firstname(class="form-control") }}
+        <div class="container">
+            {{ form.Firstname.label(class="block") }} {{ form.Firstname(class="field col-md-8") }}
         </div>
-        <div class="form-group">
-            {{ form.Lastname.label }} {{ form.Lastname(class="form-control") }}
+        <div class="container">
+            {{ form.Lastname.label(class="block") }} {{ form.Lastname(class="field col-md-8") }}
         </div>
-        <div class="form-group">
-            {{ form.Gender.label }} {{ form.Gender(class="form-control") }}
+        <div class="container">
+            {{ form.Gender.label(class="block") }} {{ form.Gender(class="field col-md-8") }}
         </div>
-        <div class="form-group">
-            {{ form.Email.label }} {{ form.Email(class="form-control", placeholder="jdoe@example.com") }}
+        <div class="container">
+            {{ form.Email.label(class="block") }} {{ form.Email(class="field col-md-8", placeholder="jdoe@example.com") }}
         </div>
-        <div class="form-group">
-            {{ form.Location.label }} {{ form.Location(class="form-control") }}
+        <div class="container">
+            {{ form.Location.label(class="block") }} {{ form.Location(class="field col-md-8") }}
         </div>
-        <div class="form-group">
-            {{ form.Biography.label }} {{ form.Biography(class="form-control") }}
+        <div class="container">
+            {{ form.Biography.label(class="block") }} {{ form.Biography(class="field col-md-8") }}
         </div>
-                <div class="form-group">
-            {{ form.Profile_picture.label }}
+                <div class="container">
+            {{ form.Profile_picture.label(class="block") }}
             
-            {{ form.Profile_picture(class="form-control") }}
+            {{ form.Profile_picture(class="field col-md-8") }}
         </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="container">
+        <button type="submit" class="btn btn-success">Add Profile</button>
+    </div>
+    
 </form>
+</div>
+
 {% endblock %}

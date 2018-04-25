@@ -21,7 +21,6 @@ class UserProfile(db.Model):
     
     created_on=db.Column(db.String(20), nullable=False)
     
-    __tablename__ = "users"
 
     def __init__(self,first_name,last_name,gender,email,location,biography,created_on,photo):
         
@@ -40,6 +39,9 @@ class UserProfile(db.Model):
         self.created_on = created_on
         
         self.photo = photo
+        
+       
+
    
     def __repr__(self):
          

@@ -1,3 +1,21 @@
 body {
     padding-top: 5rem;
+    background-color:#eaf2f9;
+}
+.form-container{
+    margin: 0 auto;
+    padding: 5px;
+    width: 45%;
+    background-color: white;
+}
+
+.title{
+    margin: 0 auto;
+    width: 45%;
+    margin-bottom: 1%;
+    
+}
+h2{
+    text-align: center;
+    
 }

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block main%}
+{% include "flash_messages.html"%}
+
+<div class="profiles-container">
+    <h1 class="title">Profiles</h1>
+    {% for profile in profiles %}
+    <div class="row border-style center profile">
+        <image src="{{ url_for('static', filename='profile_photo/'+profile['Profile_picture']) }}" class="pro_pic">
+        <div class="col pro-data">
+            <span class="">{{ profile['Firstname'] }}</span>
+            <span class="">{{ profile['Lastname'] }}</span>
+            <span class="blk">{{ profile['Gender'] }}</span>
+            <span class="blk">{{ profile['Location'] }}</span>
+        </div>
+        <div class="view-profile center col">
+            <a class="view-btn btn-success" href="{{ url_for('profile_i', userid=profile['id']) }}">View profile</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock%}

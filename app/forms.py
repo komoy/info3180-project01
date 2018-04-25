@@ -6,9 +6,9 @@ ALLOWED_EXTENSIONS =['png', 'jpg', 'jpeg']
 
 class CreateProfile(FlaskForm):
     
-    Firstname=TextField('Firstname',validators=[InputRequired()])
+    Firstname=TextField('First Name',validators=[InputRequired()])
     
-    Lastname=TextField('Lastname',validators=[InputRequired()])
+    Lastname=TextField('Last Name',validators=[InputRequired()])
     
     Gender=SelectField(u'Gender', choices=[('Male', 'Male'),('Female','Female'),('None','Prefer not to disclose'),('None',' None')])
     
